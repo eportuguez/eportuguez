@@ -1,2 +1,2 @@
 # ejemplo-pagina-web-github
-Este es un ejemplo de como subir una pagina web html a github
+Este es un ejemplo : https://eportuguez.github.io/ejemplo-pagina-web-github/
