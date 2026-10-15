@@ -1,612 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Your description">
-    <meta name="author" content="Your name">
-
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
-	<meta property="og:site_name" content="" /> <!-- website name -->
-	<meta property="og:site" content="" /> <!-- website link -->
-	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
-	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
-	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
-
-    <!-- PaginaWeb -->
-    <title>Ing. Eduardo Portuguez - Pagina web</title>
-    
-    <!-- Styles -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/fontawesome-all.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
-	
-	<!-- Favicon  -->
-    <link rel="icon" href="images/favicon.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GeoEduca · Eduardo Portuguez | Geomática y gestión del riesgo de desastres</title>
+<meta name="description" content="GeoEduca es la plataforma de consultoría y formación de Eduardo Portuguez, ingeniero geógrafo especialista en SIG, geomática y gestión del riesgo de desastres.">
+<meta name="author" content="Eduardo Portuguez">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GeoEduca · Eduardo Portuguez">
+<meta property="og:description" content="Geomática aplicada a la gestión del riesgo de desastres: consultoría y formación.">
+<meta property="og:image" content="https://eportuguez.github.io/eportuguez/images/logo-geoeduca.png">
+<meta property="og:url" content="https://eportuguez.github.io/eportuguez/">
+<meta name="theme-color" content="#0A0A0F">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0A0F;--blue:#0047FF;--glow:#2E7CFF;--amber:#FFB800;--soft:#FFD166;--s1:#12141C;--s2:#181B26;--mute:#8A93A8;--line:#232734;--w:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--w);font:300 1.05rem/1.7 Lato,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.brand{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;line-height:1.15}
+a{color:var(--glow);text-decoration:none}a:hover{color:var(--w)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0;border-top:1px solid var(--line)}
+.eyebrow{font:500 .8rem "Space Grotesk",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:.7rem}
+h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:1.6rem}
+p{color:#d5d9e4}
+nav{position:sticky;top:0;z-index:10;background:rgba(10,10,15,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-size:1.25rem;color:var(--w)}.brand b{color:var(--glow)}
+nav ul{display:flex;gap:1.4rem;list-style:none;font-size:.95rem}
+nav ul a{color:var(--mute)}nav ul a:hover{color:var(--w)}
+.btn{display:inline-block;padding:.75rem 1.5rem;border-radius:8px;font:700 .95rem Lato,sans-serif;background:var(--blue);color:var(--w);border:1px solid var(--blue);transition:.2s}
+.btn:hover{background:var(--glow);border-color:var(--glow);color:var(--w)}
+.btn.ghost{background:transparent;border-color:var(--line);color:var(--w)}.btn.ghost:hover{border-color:var(--glow)}
+.hero{padding:4rem 0 5rem;border:0}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}
+.hero h1{font-size:clamp(2rem,5vw,3.3rem);margin-bottom:1.2rem}
+.hero h1 span{color:var(--glow)}
+.hero p{max-width:34rem;margin-bottom:2rem;font-size:1.12rem}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap}
+.logo-box{position:relative;display:grid;place-items:center}
+.logo-box::before{content:"";position:absolute;width:75%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(46,124,255,.45),transparent 68%);animation:pulse 4.5s ease-in-out infinite}
+.logo-box img{position:relative;width:min(100%,340px);height:auto;object-fit:contain;animation:float 6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-12px) rotate(3deg)}}
+@keyframes pulse{0%,100%{opacity:.55;transform:scale(.9)}50%{opacity:1;transform:scale(1.05)}}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:3rem;align-items:start}
+.about img{width:100%;max-width:380px;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;border-radius:14px;border:1px solid var(--line)}
+.about p+p{margin-top:1rem}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem}
+.stat{background:var(--s1);border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem}
+.stat strong{display:block;font:700 1.7rem "Space Grotesk",sans-serif;color:var(--amber)}
+.stat span{font-size:.9rem;color:var(--mute);line-height:1.4;display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.1rem}
+.card{background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:1.5rem;transition:.2s}
+.card:hover{border-color:var(--glow);transform:translateY(-3px)}
+.card h3{font-size:1.15rem;margin-bottom:.6rem}
+.card p{font-size:.97rem;color:var(--mute)}
+.card .tag{display:inline-block;font:500 .72rem "Space Grotesk",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:.6rem}
+.timeline{list-style:none;border-left:2px solid var(--line);margin-left:.4rem}
+.timeline li{position:relative;padding:0 0 1.6rem 1.6rem}
+.timeline li::before{content:"";position:absolute;left:-7px;top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px var(--bg)}
+.timeline time{font:500 .85rem "Space Grotesk",sans-serif;color:var(--amber)}
+.timeline h3{font-size:1.1rem;margin:.1rem 0 .2rem}
+.timeline p{font-size:.95rem;color:var(--mute)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+ul.plain{list-style:none}
+ul.plain li{padding:.55rem 0;border-bottom:1px solid var(--line);font-size:.98rem;color:#d5d9e4}
+ul.plain li:last-child{border:0}
+.social{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.4rem}
+.contact{text-align:center}
+.contact p{max-width:32rem;margin:0 auto 1.6rem}
+.contact .social{justify-content:center}
+.mail{font:700 1.4rem "Space Grotesk",sans-serif;display:inline-block;margin-bottom:.5rem}
+footer{border-top:1px solid var(--line);padding:2rem 0;text-align:center;font-size:.88rem;color:var(--mute)}
+@media(max-width:820px){.hero .wrap,.about,.two{grid-template-columns:1fr}.logo-box{order:-1;max-width:240px;margin:0 auto}.about img{max-width:300px}nav ul{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+</style>
 </head>
-<body data-spy="scroll" data-target=".fixed-top">
-    
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-        <div class="container">
-            
-            <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a>  
+<body>
+<nav><div class="wrap">
+<a class="brand" href="#inicio"><b>Geo</b>Educa</a>
+<ul><li><a href="#sobre">Eduardo</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#trayectoria">Trayectoria</a></li><li><a href="#proyectos">Proyectos</a></li><li><a href="#formacion">Formación</a></li></ul>
+<a class="btn" href="#contacto">Contactar</a>
+</div></nav>
 
-            <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Mark</a> -->
+<header class="hero" id="inicio"><div class="wrap">
+<div>
+<p class="eyebrow">GeoEduca · por Eduardo Portuguez</p>
+<h1>Geomática aplicada a la <span>gestión del riesgo de desastres</span></h1>
+<p>Consultoría y formación en SIG, evaluación de riesgos y drones, con la experiencia de casi 30 años en gestión pública territorial.</p>
+<div class="cta"><a class="btn" href="#contacto">Hablemos de tu proyecto</a><a class="btn ghost" href="#servicios">Ver servicios</a></div>
+</div>
+<div class="logo-box"><img src="images/logo-geoeduca.png" alt="Logo de GeoEduca: nudo de tres lazos dentro de un círculo" width="340" height="340"></div>
+</div></header>
 
-            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<section id="sobre"><div class="wrap about">
+<img src="images/eduardo-portuguez.jpg" alt="Retrato de Eduardo Portuguez, ingeniero geógrafo" width="380" height="475" loading="lazy">
+<div>
+<p class="eyebrow">Sobre Eduardo</p>
+<h2>Ingeniero Geógrafo, fundador de GeoEduca</h2>
+<p>Especialista en Geomática en el CENEPRED (PCM), donde participó en la implementación del SIGRID, sistema nacional que usan los tres niveles de gobierno. Ha dirigido unidades de catastro, obras y proyectos de inversión en gobierno local, y trabajó en el gobierno regional del Callao y en el IGN.</p>
+<p>Docente universitario y de posgrado en gestión del riesgo de desastres. Cuenta con maestría concluida en Gestión del Riesgo de Desastres y Adaptación al Cambio Climático.</p>
+<div class="stats">
+<div class="stat"><strong>Casi 30</strong><span>años de trayectoria, desde 1996</span></div>
+<div class="stat"><strong>+4 000</strong><span>estudiantes en cursos virtuales de GRD con ArcGIS</span></div>
+<div class="stat"><strong>2012</strong><span>en el CENEPRED, hasta la actualidad</span></div>
+<div class="stat"><strong>RPAS</strong><span>piloto acreditado por la DGAC desde 2015</span></div>
+</div>
+</div>
+</div></section>
 
-            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#header">Inicio <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="https://drive.google.com/file/d/1uGzYKsQ7iHB3NQTuinDalt6CTc8K2bJ2/view">Hoja de vida</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#services">Servicios</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Acerca de</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown01">
-                            <a class="dropdown-item page-scroll" href="project.html">Detalles de Projectos</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item page-scroll" href="terms.html">Terminos y Condiciones</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item page-scroll" href="privacy.html">Privacidad</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#contact">Contactame</a>
-                    </li>
-                </ul>
-                <span class="nav-item social-icons">
-                    <span class="fa-stack">
-                        <a href="https://www.facebook.com/EduPortuguez/">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-facebook-f fa-stack-1x"></i>
-                        </a>
-                    </span>
-                    <span class="fa-stack">
-                        <a href="https://twitter.com/yayo2202">
-                            <i class="fas fa-circle fa-stack-2x"></i>
-                            <i class="fab fa-twitter fa-stack-1x"></i>
-                        </a>
-                    </span>
-                </span>
-            </div> <!-- end of navbar-collapse -->
-        </div> <!-- end of container -->
-    </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
+<section id="servicios"><div class="wrap">
+<p class="eyebrow">Servicios</p><h2>Cómo puedo ayudarte</h2>
+<div class="grid">
+<article class="card"><h3>SIG y geomática</h3><p>Diseño e implementación de sistemas de información geográfica, estándares de información geoespacial y plataformas de datos territoriales.</p></article>
+<article class="card"><h3>Gestión del riesgo de desastres</h3><p>Evaluación de riesgos por fenómenos naturales (Ley N.° 29664), planes de continuidad operativa y redes de alerta temprana.</p></article>
+<article class="card"><h3>Drones (RPAS)</h3><p>Operación de drones y procesamiento de imágenes con Pix4D, además de asesoría para implementar unidades de RPAS.</p></article>
+<article class="card"><h3>Docencia y capacitación</h3><p>Cursos y diplomados en SIG y GRD para autoridades, ministerios, universidades y empresas.</p></article>
+</div>
+</div></section>
 
+<section id="trayectoria"><div class="wrap">
+<p class="eyebrow">Trayectoria</p><h2>Experiencia en los tres niveles de gobierno</h2>
+<ol class="timeline">
+<li><time>2012 – actualidad</time><h3>CENEPRED · Presidencia del Consejo de Ministros</h3><p>Especialista en Geomática (desde 2016) y en Informática (2012–2016).</p></li>
+<li><time>2011</time><h3>IECISA Perú · consultoría para SUNARP</h3><p>Manuales de levantamiento y mantenimiento de información catastral urbana.</p></li>
+<li><time>2010 – 2011</time><h3>SENASA</h3><p>Especialista GIS en el proyecto de erradicación de la mosca de la fruta.</p></li>
+<li><time>2007 – 2010</time><h3>Corporación Municipal de Villa María del Triunfo</h3><p>Subgerente de Catastro y Habilitaciones Urbanas, de Obras Públicas y de Estudios y Proyectos de Inversión.</p></li>
+<li><time>2002 – 2007</time><h3>Gobierno Regional del Callao</h3><p>Especialista en Demarcación Territorial y cartografía regional.</p></li>
+<li><time>1999 – 2001</time><h3>Instituto Geográfico Nacional (IGN)</h3><p>Responsable de la implementación del SIG del IGN.</p></li>
+</ol>
+</div></section>
 
-    <!-- Header -->
-    <header id="header" class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="text-container">
-                        <h1 class="h1-large">Ing. Eduardo Javier Portuguez Barrientos</h1>
-                        <a class="btn-solid-lg page-scroll" href="#about">Blog</a>
-                        <a class="btn-outline-lg page-scroll" href="#contact"><i class="fas fa-user"></i>Contactame</a>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </header> <!-- end of header -->
-    <!-- end of header -->
+<section id="proyectos"><div class="wrap">
+<p class="eyebrow">Proyectos destacados</p><h2>Sistemas que usan instituciones de todo el país</h2>
+<div class="two">
+<article class="card"><span class="tag">CENEPRED · 2016 – actualidad</span><h3>SIGRID</h3><p>Implementación del Sistema de Información para la Gestión del Riesgo de Desastres (versiones 1, 2 y 3) y de la aplicación SIGRID Collect (versiones 1 a 4), a nivel nacional y para los tres niveles de gobierno.</p></article>
+<article class="card"><span class="tag">IGN · 1999 – 2001</span><h3>SIG del Instituto Geográfico Nacional</h3><p>Dirección de la implementación de la unidad de Sistemas de Información Geográfica del área técnica: equipos, servidores y plotters.</p></article>
+</div>
+</div></section>
 
+<section id="formacion"><div class="wrap two">
+<div>
+<p class="eyebrow">Docencia</p><h2>Enseñar lo que se aplica</h2>
+<ul class="plain">
+<li>Diplomado en Gestión del Riesgo de Desastres y Cambio Climático · Escuela Superior de Guerra del Ejército</li>
+<li>Acreditación de evaluadores de riesgos · UNI, UNSCH, UAC, UNASAM, UPT, UNALM</li>
+<li>Aplicación de los SIG en evaluación de riesgos · UNALM y Universidad Nacional de Jaén</li>
+<li>Cursos virtuales de GRD y de evaluación de riesgos con ArcGIS · Master SIG Consultores</li>
+</ul>
+</div>
+<div>
+<p class="eyebrow">Formación reciente</p><h2>Siempre actualizado</h2>
+<ul class="plain">
+<li>Cursos de ArcGIS Pro (Esri)</li>
+<li>Especialización en Inteligencia Artificial con tecnologías geoespaciales (GeoAI), 2024</li>
+<li>Especialización en Catastro Urbano Nacional · COFOPRI / MVCS, 2026</li>
+<li>Becario JICA (Japón) · proyecto SATREPS II</li>
+</ul>
+</div>
+</div></section>
 
-    <!-- About-->
-    <div id="about" class="basic-1 bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="text-container first">
-                        <h2>Hola, Bienvenido a mi espacio en la red,</h2>
-                        <p>Aca podras encontrar muchos recursos en tecnologías de la información geoespacial que te pueden ser muy utiles</p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <div class="text-container second">
-                        <div class="time">2012 - Actualidad</div>
-                        <h6>CENEPRED</h6>
-                        <p>Especialista en Geomatica y Gestión del Riesgo de Desastres</p>
-                        <div class="time">2011 - 2011</div>
-                        <h6>Informática el Corte Ingles</h6>
-                        <p>Consultor Especializado en Catastro urbano y rural</p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <div class="text-container third">
-                        <div class="time">2010 - 2011</div>
-                        <h6>SENASA</h6>
-                        <p>Especialista en Sistemas de Información Geográfica</p>
-                        <div class="time">2006 - 2010</div>
-                        <h6>Corporación Municipal Villa María del Triunfo</h6>
-                        <p>Subgerente Catastro / Subgerente de Obras Públicas / Subgerente de Proyectos de Inversión</p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-1 -->
-    <!-- end of about -->
+<section class="contact" id="contacto"><div class="wrap">
+<p class="eyebrow">Contacto</p><h2>Conversemos sobre tu proyecto</h2>
+<p>Cuéntame qué necesitas y en qué plazo. Respondo por correo con los siguientes pasos.</p>
+<a class="mail" href="mailto:proyectos@eduardoportuguez.com">proyectos@eduardoportuguez.com</a>
+<div class="social">
+<a class="btn ghost" href="https://www.instagram.com/geoeducando.pe/" target="_blank" rel="noopener">Instagram</a>
+<a class="btn ghost" href="https://www.facebook.com/GeoEDUcando" target="_blank" rel="noopener">Facebook</a>
+<a class="btn ghost" href="https://www.linkedin.com/in/eduardoportuguez/" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+</div></section>
 
-
-    <!-- Services -->
-    <div id="services" class="basic-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="h2-heading">Servicios</h2>
-                    <p class="p-heading">Profesional con amplia experiencia y prestigio en el sector público y privado, en los 3 niveles de gobierno. Ingeniero Geógrafo, con estudios en Gestión Pública, Inversión Pública, Sistemas Integrados de Gestión, Desarrollo Regional internacional, Gestión local con mención en Catastro, obras públicas y privadas, Proyectos de Inversión pública, Saneamiento Físico Legal, Evaluación de Riesgos y Docente en diversas universidades a nivel nacional en temas como SIG y GRD.</p>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="text-box">
-                        <i class="far fa-gem"></i>
-                        <h4>GIS/SIG</h4>
-                        <p>Los proyectos de Sistemas de Información Geográfica exitosos comienzan con un buen diseño. Establece una base sólida para el desarrollo futuro y permite el crecimiento a largo plazo.</p>
-                    </div> <!-- end of text-box -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <div class="text-box">
-                        <i class="fas fa-code"></i>
-                        <h4>RPAS - drones</h4>
-                        <p>Piloto/Operador RPAS/DRONE Certificado por la DGAC/MTC y asesor en aspectos de implementación y desarrollo de actividades técnicas para unidad de RPAS.</p>
-                    </div> <!-- end of text-box -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <div class="text-box">
-                        <i class="fas fa-tv"></i>
-                        <h4>DOCENCIA</h4>
-                        <p>Docente de Cursos de Especialización para Acreditación como Evaluador de Riesgos de Desastres a nivel nacional, en Universidad Nacional de Ingeniería-Lima, Universidad San Cristóbal de Huamanga-Ayacucho, Universidad Andina del Cusco, Universidad Nacional Santiago Antúnez de Mayolo-Huaraz, Universidad Privada de Tacna, Universidad Nacional de Jaén</p>
-                    </div> <!-- end of text-box -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-2 -->
-    <!-- end of services -->
-
-
-    <!-- Details -->
-	<div class="split">
-		<div class="area-1">
-		</div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2 bg-gray">
-            <div class="container">    
-                <div class="row">
-                    <div class="col-lg-12">     
-                        
-                        <!-- Text Container -->
-                        <div class="text-container">
-                            <h2>Por qué trabajar conmigo</h2>
-                            <p>Soy un gran comunicador y me encanta invertir el tiempo necesario para entender muy bien el problema del cliente.</p>
-                            <h5>HERRAMIENTAS GIS</h5>
-                            <p>Mis herramientas GIS favoritas son las de escritorio, tanto Software licenciado como libre, también puedo crear proyectos en linea a traves de Dashboard, webapp builder y otros tableros.</p>
-                            <h5>HABILIDADES</h5>
-                            <p>Estoy familiarizado y trabajo a diario con ArcGIS, Qgis, GvSig, AutoCad, PostgreSQL y PostGIS</p>
-                            
-                            <div class="icons-container">
-                                <img src="images/details-icon-photoshop.png" alt="alternative">
-                                <img src="images/details-icon-illustrator.png" alt="alternative">
-                                <img src="images/details-icon-html.png" alt="alternative">
-                                <img src="images/details-icon-css.png" alt="alternative">
-                                <img src="images/details-icon-bootstrap.png" alt="alternative">
-                                <img src="images/details-icon-javascript.png" alt="alternative">
-                            </div> <!-- end of icons-container -->
-                        </div> <!-- end of text-container -->
-                        <!-- end of text container -->
-
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-		</div> <!-- end of area-2 -->
-    </div> <!-- end of split -->
-    <!-- end of details -->
-
-
-    <!-- Projects -->
-    <div id="projects" class="basic-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="h2-heading">Proyectos y experiencias</h2>
-                    <p class="p-heading">A continuación se enumeran algunos de los proyectos y experiencias más representativos en los que he trabajado.</p>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="images/project-1.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Jumbotron, <strong>Project:</strong> web design for their corporate websites and landing pages for marketing campaigns <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="images/project-2.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Carsrepo, <strong>Project:</strong> designed and developed modern platform for purchasing second hand cars online <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="images/project-3.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Truevideo, <strong>Project:</strong> created a custom video editing and upload web app for this awesome team <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="images/project-4.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Evolosim, <strong>Project:</strong> complete redesign of their corporate website and platform update for their online shop <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-3 -->
-    <!-- end of projects -->
-
-
-    <!-- Works -->
-    <div class="basic-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="images/work-1.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Zigoland, <strong>Project:</strong> started a new website from ground up for a new product <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="images/work-2.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Visodream, <strong>Project:</strong> developed a new forum for the Visodream community <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="images/work-3.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Primoday, <strong>Project:</strong> complete redesign of their corporate website and platform <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="images/work-4.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Nextlite, <strong>Project:</strong> created a custom video editing and upload web app <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="images/work-5.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Syncnow, <strong>Project:</strong> web design for their corporate websites and landing pages <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <div class="text-container">
-                        <div class="image-container">
-                            <a href="project.html">
-                                <img class="img-fluid" src="images/work-6.jpg" alt="alternative">
-                            </a>
-                        </div> <!-- end of image-container -->
-                        <p><strong>For:</strong> Shifter, <strong>Project:</strong> started a new website from ground up for a new product <a class="blue" href="project.html">details</a></p>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of basic-4 -->
-    <!-- end of works -->
-
-
-    <!-- Testimonials -->
-    <div class="cards-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="h2-heading">Algunas palabras de personas que eligieron trabajar conmigo</h2>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="testimonial-text">“Eduardo es un especialista calificado que hará todo lo posible para entregar el proyecto a tiempo y realmente lo agradezco.”</p>
-                            <div class="details">
-                                <img src="images/testimonial-1.jpg" alt="alternative">
-                                <div class="text">
-                                    <div class="testimonial-author">Samantha Bloom</div>
-                                    <div class="occupation">Team Leader - Syncnow</div>
-                                </div> <!-- end of text -->
-                            </div> <!-- end of testimonial-details -->
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="testimonial-text">“Me encantó trabajar con Eduardo, es un profesional increíble con gran atención a los detalles. También tiene un gran ojo para el desarrollo.”</p>
-                            <div class="details">
-                                <img src="images/testimonial-2.jpg" alt="alternative">
-                                <div class="text">
-                                    <div class="testimonial-author">John Rowling</div>
-                                    <div class="occupation">Marketing Manager - Nexlite</div>
-                                </div> <!-- end of text -->
-                            </div> <!-- end of testimonial-details -->
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="testimonial-text">“Me alegro mucho de haber comenzado a trabajar con Eduardo. Hemos utilizado muchas veces sus habilidades para nuestros proyectos internos en línea.”</p>
-                            <div class="details">
-                                <img src="images/testimonial-3.jpg" alt="alternative">
-                                <div class="text">
-                                    <div class="testimonial-author">Lana Smith</div>
-                                    <div class="occupation">General Manager - Shifter</div>
-                                </div> <!-- end of text -->
-                            </div> <!-- end of testimonial-details -->
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of cards-1 -->
-    <!-- end of testimonials -->
-
-
-    <!-- Section Divider -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <hr class="section-divider">
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-    <!-- end of section divider -->
-
-
-    <!-- Questions -->
-    <div class="accordion-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2 class="h2-heading">Consultas frecuentes</h2>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-
-                    <div class="accordion" id="accordionExample">
-                        <div class="card">
-                            <div class="card-header" id="headingOne">
-                                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    ¿Cómo puedo contactarlo y obtener rápidamente una asesoria para mi proyecto en línea?
-                                </button>
-                            </div>
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    La mejor manera de comunicarse conmigo es a través del formulario de contacto o enviándome un mensaje en mis cuentas de redes sociales. Para una respuesta rápida, asegúrese de proporcionar muchos detalles del proyecto.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    ¿Brindas asesoria, asistencia técnica y desarrollas proyectos en Sistemas de Información Geográfica?
-                                </button>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    Si, la mejor manera de comunicarse conmigo es a través del formulario de contacto o enviándome un mensaje en mis cuentas de redes sociales. Para una respuesta rápida, asegúrese de proporcionar muchos detalles del proyecto.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingThree">
-                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    ¿Brindas asesoria, asistencia técnica y desarrollas proyectos en Gestión del Riesgo de Desastres?
-                                </button>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    Si, la mejor manera de comunicarse conmigo es a través del formulario de contacto o enviándome un mensaje en mis cuentas de redes sociales. Para una respuesta rápida, asegúrese de proporcionar muchos detalles del proyecto.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingFour">
-                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    Si algo sale mal con el proyecto, ¿puedo recuperar mi dinero?
-                                </button>
-                            </div>
-                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    Claro que si, la mejor manera de comunicarse conmigo es a través del formulario de contacto o enviándome un mensaje en mis cuentas de redes sociales. Para una respuesta rápida, asegúrese de proporcionar muchos detalles del proyecto.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingFive">
-                                <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    ¿Cuál es su método de pago preferido? ¿Necesita un anticipo?
-                                </button>
-                            </div>
-                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-                                <div class="card-body">
-                                    La mejor manera de comunicarse conmigo es a través del formulario de contacto o enviándome un mensaje en mis cuentas de redes sociales. Para una respuesta rápida, asegúrese de proporcionar muchos detalles del proyecto.
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- end of accordion -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of accordion-1 -->
-    <!-- end of questions -->
-
-
-    <!-- Contact -->
-    <div id="contact" class="form-1 bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Detalles para contacto</h2>
-                    <p class="p-heading">Para cualquier tipo de proyecto no dudes en ponerte en contacto conmigo. La forma más rápida es enviarme su mensaje utilizando el siguiente correo electrónico <a class="blue no-line" href="#your-link">eduardo.portuguez@gmail.com</a></p>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-		<center><a href="http://www.websmultimedia.com/contador-de-visitas-gratis" title="Contador De Visitas Gratis">
-<img style="border: 0px solid; display: inline;" alt="contador de visitas" src="http://www.websmultimedia.com/contador-de-visitas.php?id=301118">
-</a></center>
-		
-            <div class="row">
-                <div class="col-lg-12">
-                    
-                    <!-- Contact Form -->
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" class="form-control-input" id="cname" required>
-                            <label class="label-control" for="cname">Nombres</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control-input" id="cemail" required>
-                            <label class="label-control" for="cemail">Email</label>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control-textarea" id="cmessage" required></textarea>
-                            <label class="label-control" for="cmessage">Detalla tu consulta</label>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="form-control-submit-button">Enviar</button>
-                        </div>
-                    </form>
-                    <!-- end of contact form -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of form-1 -->  
-    <!-- end of contact -->
-
-
-    <!-- Footer -->
-    <div class="footer bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="social-container">
-                        <span class="fa-stack">
-                            <a href="https://www.facebook.com/EduPortuguez/">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-facebook-f fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="#https://twitter.com/yayo2202">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-twitter fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="https://www.linkedin.com/in/eduardoportuguez/">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-pinterest-p fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="https://www.instagram.com/eduardoportuguez/">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-instagram fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="https://www.youtube.com/channel/UCpfpnsZ_FMznJRBRaob0jNg">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-youtube fa-stack-1x"></i>
-                            </a>
-                        </span>
-                    </div> <!-- end of social-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of footer -->  
-    <!-- end of footer -->
-
-
-    <!-- Copyright -->
-    <div class="copyright bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="p-small">Copyright © <a class="no-line" href="#your-link">Eduardo Portuguez</a></p>
-                </div> <!-- end of col -->
-            </div> <!-- enf of row -->
-        </div> <!-- end of container -->
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="p-small">Distributed By <a class="no-line" href="https://themewagon.com/">Themewagon</a></p>
-                </div> <!-- end of col -->
-            </div> <!-- enf of row -->
-        </div> <!-- end of container -->
-        
-    </div> <!-- end of copyright --> 
-    <!-- end of copyright -->
-    
-    	
-    <!-- Scripts -->
-    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+<footer><div class="wrap">© 2026 GeoEduca EIRL · Eduardo Portuguez · Lima, Perú</div></footer>
 </body>
 </html>
